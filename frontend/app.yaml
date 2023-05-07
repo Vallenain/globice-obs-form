@@ -1,0 +1,16 @@
+# Google App Engine config file
+# -----------------------------
+# See https://cloud.google.com/appengine/docs/standard/python3/config/appref
+
+runtime: python310
+env: standard
+service: default
+
+# Set App Engine instance class (defaults to F1)
+# See https://cloud.google.com/appengine/docs/standard/#instance_classes
+instance_class: F1
+
+handlers:
+- url: /.*
+  static_dir: static
+  secure: always

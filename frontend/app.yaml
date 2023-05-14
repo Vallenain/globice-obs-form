@@ -11,6 +11,10 @@ service: default
 instance_class: F1
 
 handlers:
-- url: /.*
-  static_dir: static
-  secure: always
+  - url: /(.*\.(js|css|png|jpg|ico|svg|woff|woff2|ttf|eot|json))$
+    static_files: dist/\1
+    upload: dist/.*\.(js|css|png|jpg|ico|svg|woff|woff2|ttf|eot|json)$
+
+  - url: /(.*)
+    static_files: dist/index.html
+    upload: dist/index.html

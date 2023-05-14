@@ -7,13 +7,13 @@ from starlette.responses import RedirectResponse
 
 
 # Init FastAPI router for API endpoints
-api_routes = APIRouter()
+api_routes = APIRouter(prefix="/api")
 
 
 @api_routes.get('/')
 def redirect_to_docs():
     """Redirect to API docs when at site root"""
-    return RedirectResponse('/redoc')
+    return RedirectResponse('/api/redoc')
 
 
 @api_routes.get('/hello/{name}')
